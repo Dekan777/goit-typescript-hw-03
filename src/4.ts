@@ -3,7 +3,7 @@
 // об'єкта цього класу (наприклад Math.random()). Також цей клас
 // повинен мати метод getSignature, який повертає значення властивості
 //  signature.
-class Kay {
+class Key {
   private signature: number;
 
   constructor() {
@@ -40,7 +40,7 @@ class Person {
 //    метод OpenDoor, який приймає об'єкт класу Key.
 abstract class House {
   public door: boolean = false;
-  private key: Key;
+  protected key: Key;
 
   protected tenants: Person[] = [];
 
@@ -81,6 +81,7 @@ class MyHouse extends House {
 const key = new Key();
 const house = new MyHouse(key);
 const person = new Person(key);
+
 house.openDoor(person.getKey());
 house.comeIn(person);
 
